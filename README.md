@@ -60,16 +60,7 @@ dotnet restore
 dotnet run
 ```
 
-## Contribuições
-
-Contribuições são bem-vindas! Se você deseja adicionar mais funcionalidades, corrigir bugs ou melhorar o projeto, sinta-se à vontade para fazer um fork deste repositório e criar uma pull request com suas alterações.
-
-## Licença
-
-Este projeto está licenciado sob a [MIT License](LICENSE). Sinta-se à vontade para usá-lo e modificá-lo de acordo com suas necessidades.
 
 ## Contato
 
-Se você tiver alguma dúvida ou sugestão, entre em contato pelo e-mail: seu-email@example.com.
-
-Divirta-se aprendendo e praticando o Dapper neste projeto! 🚀
+brunosantostito2@hotmail.com
