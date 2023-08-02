@@ -56,19 +56,19 @@ namespace Dapper_Crud.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(StudentInputModel model)
         {
-            var student = new Student(model.FullName, model.BirthDate, model.SchoolClass);
+            var student = new Student(model.FullName, model.Age, model.SchoolClass);
 
             var parameters = new
             {
                 student.FullName,
-                student.BirthDate,
+                student.Age,
                 student.SchoolClass,
                 student.IsActive
             };
 
             using (var SqlConnection = new SqlConnection(_connectionString))
             {
-                const string sql = "INSERT INTO Students OUTPUT INSERTED.Id Values (@FullName, @BirthDate, @SchoolClass, @IsActive)";
+                const string sql = "INSERT INTO Students OUTPUT INSERTED.Id Values (@FullName, @Age, @SchoolClass, @IsActive)";
 
                 var id = await SqlConnection.ExecuteScalarAsync<int>(sql, parameters);
 
@@ -83,13 +83,13 @@ namespace Dapper_Crud.Controllers
             {
                 id,
                 model.FullName,
-                model.BirthDate,
+                model.Age,
                 model.SchoolClass
             };
 
             using (var SqlConnection = new SqlConnection(_connectionString))
             {
-                const string sql = "UPDATE Students SET FullName = @FullName, BirthDate = @BirthDate, SchoolClass = @SchoolClass WHERE Id = @id";
+                const string sql = "UPDATE Students SET FullName = @FullName, Age = @Age, SchoolClass = @SchoolClass WHERE Id = @id";
 
                 await SqlConnection.ExecuteAsync(sql, parameters);
 
